@@ -1,33 +1,32 @@
 using System.Collections.Generic;
+using System;
 
 namespace GradeBook
 {
     public class Book
     {
-        private double _average;
-        private List <double> _gradeList;
+        private double average;
+        private List <double> grades;
         public Book()
         {
-           _gradeList = new List<double>();
-           _average = 0;   
+           grades = new List<double>();
+           average = 0;   
         }
 
-        public void addGrade(double grade )
+        public void AddGrade(double grade )
         {
-            _gradeList.Add(grade);
+            grades.Add(grade);
     
         }
-        public double calculateAverage()
-        {
-            double total = 0;
-            foreach (double grade in _gradeList)
-            {
-                total = total + grade;
-            }
 
-            double average = total / _gradeList.Count;
-            _average = average;
-            return _average;
+        public Statistic GetStatistics()
+        {
+            Statistic statistic = new Statistic();
+            statistic.Average = statistic.CalculateAverage(grades);
+            statistic.Highest = statistic.FindHighestGrade(grades);
+            statistic.Lowest  = statistic.FindLowestGrade(grades);
+            return statistic;
         }
+      
     }
 }

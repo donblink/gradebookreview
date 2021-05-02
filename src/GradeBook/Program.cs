@@ -8,11 +8,11 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book();
-            book.addGrade(98.7);
-            book.addGrade(96.2);
-            book.addGrade(67.2);
-            book.addGrade(55.3);
-            book.addGrade(66.3);
+            book.AddGrade(98.7);
+            book.AddGrade(96.2);
+            book.AddGrade(67.2);
+            book.AddGrade(55.3);
+            book.AddGrade(66.3);
             
             double average = book.calculateAverage();
 
